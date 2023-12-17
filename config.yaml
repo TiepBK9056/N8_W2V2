@@ -1,0 +1,31 @@
+common:
+  meta_file_folder: './data/ESD/'
+  do_train: !!bool True
+
+model:
+  checkpoint_folder: './checkpoint'
+  model_name_or_path: './checkpoint'
+  freeze_feature_encoder: !!bool True
+  use_siamese: !!bool True
+  freeze_encoder: !!bool False
+
+siamese:
+  margin: 100.0
+  coff_siamese_loss: 0.0
+
+train:
+  batch_size: 32
+  num_train_epochs: 1000
+  use_gpu: !!bool True
+  eval_step: 100
+
+optimizer:
+  learning_rate: 1.0e-5
+  adam_epsilon: 1.0e-8
+
+classifier:
+  num_labels: 5
+  hidden_size: 768
+  proj_size: 256
+  final_dropout: 0.1
+  use_return_dict: !!bool True
